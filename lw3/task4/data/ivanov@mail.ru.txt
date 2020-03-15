@@ -1,0 +1,4 @@
+email: ivanov@mail.ru
+first_name: Ivanov
+last_name: Gordon
+age: 24
