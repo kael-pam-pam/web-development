@@ -1,0 +1,146 @@
+.main_block
+{
+    width: 960px;
+    margin: 100px auto 130px;
+    overflow: hidden;
+}
+
+.photo_block 
+{
+    width: 330px;
+    height: 350px;
+    background-color: #9fadf4;
+    float: left;
+    border-radius: 10px;
+}
+
+.photo 
+{
+    display: block;
+    height: 350px;
+    padding: 0 30px;
+    border-radius: 5px;
+    background-color: #9fadf4;
+    float: left;
+}
+
+.quote 
+{
+    box-sizing: border-box;
+    width: 630px;
+    padding: 50px 0 0 60px;
+    float: left;
+}
+
+.quote_pic 
+{
+    background-image: url("../pictures/quotes.png");
+    height: 87px;
+    width: 130px;  
+}
+
+.quote_text 
+{
+    font: italic 28px/1.5 Georgia;
+    color: #848484;
+    margin-left: 60px;
+    margin-top: -18px;
+}
+
+.quote_text cite 
+{
+    display: block;
+    margin: 10px 0 0 4px;
+    color: #333333;
+    font: normal 700 16px 'Open Sans', sans-serif;
+}
+
+.lists 
+{
+    clear: both;
+    float: left;
+}
+
+.list_title 
+{
+    display: block;
+    color: #15a98b;
+    font: 600 24px 'Open Sans', sans-serif; 
+    margin-top: 46px;
+}
+
+.list 
+{
+    font-size: 19px;
+    font-family: Georgia;  
+    color: #555555;
+    padding-left: 22px;
+}
+
+.list li 
+{
+    margin-bottom: 15px;
+}
+
+.main_text_block 
+{
+    box-sizing: border-box;
+    width: 630px;
+    padding-left: 60px;
+    float: right;
+}
+
+h1 
+{  
+    font-family: 'Open Sans';
+    font-size: 48px;
+    color: #333333;
+    margin-bottom: 45px;
+}
+
+h1:after 
+{
+    content: " ";
+    display: block;
+    width: 60px;
+    height: 6px;
+    background-color: #45c3aa;
+    border-radius: 10px;
+    margin-top: 21px;
+}
+
+.text 
+{
+    margin-top: 0;
+    font: 19px/32px Georgia;
+    color: #555555;
+    margin-bottom: 37px;
+}
+
+h2 
+{
+    margin-top: 0px;
+    font: 400 36px 'Open Sans', sans-serif;
+    color: #333333;
+    margin-bottom: 12px;
+}
+
+.write_me 
+{
+    display: inline-block;
+    position: relative;
+    font: 400 19px Georgia;
+    color: #15a98b;
+    margin-top: 10px;
+    text-decoration: none;
+    border-bottom: 1px #15a98b solid;
+}
+
+.write_me:after 
+{
+    content: " →";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 120px;
+}
