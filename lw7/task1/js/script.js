@@ -3,8 +3,15 @@ function isPrimeNumber(n) {
   
   if (Array.isArray(n)) {
     n.forEach((element) => isPrimeNumber(element));
-  } else if (typeof(n) == 'number') {
-    for (let i = 2; (i <= Math.sqrt(n)) && isPrime; i++) {
+    return;
+  }
+  
+  if (typeof(n) == 'number') {
+    if (n < 2) {
+      isPrime = false;
+    }
+    
+    for (let i = 2; isPrime && i <= Math.sqrt(n); i++) {
       if (n % i == 0) {
         isPrime = false;
       }
@@ -15,7 +22,9 @@ function isPrimeNumber(n) {
     } else {    
       console.log(n + ' is not prime number');
     }
-  } else {
-    console.log('Ошибка. Переданный параметр не является числом либо массивом, либо элемент массива не число');
-  }
+    return;
+  } 
+  
+  console.log('Ошибка. Переданный параметр "' + n + 
+              '" не является числом либо массивом, либо элемент массива не число');
 }
