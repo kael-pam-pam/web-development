@@ -3,13 +3,13 @@ body
     margin: 0;
 }
 
-.navigation
+.navigation_container
 {
     width: 960px;
-    margin: 0 auto;  
+    margin: 0 auto;
 }
 
-.navigation ul
+.navigation
 {
     margin: 0;
     padding: 0;
@@ -17,30 +17,38 @@ body
     display: flex;
 }
 
-.navigation ul li
-{
-    display: flex;
-}
-
 .navigation_item
 {
+    position: relative; 
+}
+
+.navigation_item_text
+{
     display: block;
-    padding-left: 20px;
+    padding-top: 2px;
+    padding-left: 47px;
     padding-right: 20px;
     text-decoration: none;
-    font: 19px/50px Georgia;
+    font: 19px/48px Georgia;
     color: #333333;
 }
 
-.navigation_item:before
+.navigation_item_about_me
 {
-    content: "";
-    display: inline-block;
-    margin-right: 11px;
-    height: 16px;
+    padding-left: 45px;
 }
 
-.navigation_item:hover
+.navigation_item_text:before
+{
+    content: "";
+    display: block;
+    height: 16px; 
+    position: absolute;
+    top: 17px;
+    left: 21px;
+}
+
+.navigation_item_text:hover
 {
     background-color: #15a98c;
     color: #f5f5f5;
@@ -49,14 +57,14 @@ body
 .navigation_item_about_me:before
 {
     background-image: url("../pictures/about_me_icon.png");
-    width: 14px;
+    width: 16px;
 }
 
 .navigation_item_about_me:hover:before
 {
     background-image: url("../pictures/about_me_white_icon.png");
+    width: 16px;
 }
-
 
 .navigation_item_biography:before
 {
@@ -82,24 +90,25 @@ body
     width: 16px;
 }
 
-.background_pic
+.top_block
 {
     background-image: url("../pictures/background_pic.png");
+    background-repeat: no-repeat;
+    background-position: top;
     height: 400px;
+    position: relative;
 }
 
-.background_pic_shadow
+.photo_quote
 {
-    background-image: url("../pictures/background_pic_shadow.png");
-    height: 400px;
-    margin-top: -400px;
-}
-
-.main_block
-{
-    width: 960px;
-    margin: -190px auto 95px;
     display: flex;
+    justify-content: space-between;
+    width: 960px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 210px;
+    margin: 0 auto;
 }
 
 .photo 
@@ -111,57 +120,69 @@ body
     background-color: #9fadf4;
 }
 
-.list_title 
+.quote_text 
+{  
+    width: 570px;
+    padding-top: 25px;
+    font: italic 28px/1.5 Georgia;
+    color: #fff;
+    margin: 0 0 40px;
+}
+
+.quote_cite 
 {
     display: block;
+    margin: 10px 0 0 4px;
+    color: #fff;
+    font: normal 600 16px 'Open Sans', sans-serif;
+}
+
+.main_block
+{
+    width: 960px;
+    margin: 0 auto 95px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lists
+{
+    padding-top: 204px;
+    width: 330px;
+}
+
+.list_title 
+{
     color: #15a98b;
     font: 600 24px 'Open Sans', sans-serif; 
-    margin-top: 46px;
 }
 
 .list 
 {
+    margin-top: 20px;
+    margin-bottom: 49px;
     font-size: 19px;
     font-family: Georgia;  
-    color: #555555;
-    padding-left: 22px;
+    color: #555;
+    padding-left: 21px;
 }
 
-.list li 
+.list_item
 {
-    margin-bottom: 15px;
+    margin-bottom: 14.3px;
 }
 
-.main_text_block 
-{
-    box-sizing: border-box;
-    width: 630px;
-    padding-left: 60px;
-}
-
-.quote_text 
+.texts
 {
     box-sizing: border-box;
-    padding-top: 25px;
-    font: italic 28px/1.5 Georgia;
-    color: #ffffff;
-    margin: 0 0 40px;
-}
-
-.quote_text cite 
-{
-    display: block;
-    margin: 10px 0 0 4px;
-    color: #ffffff;
-    font: normal 600 16px 'Open Sans', sans-serif;
+    width: 570px;
 }
 
 h1 
 {  
     font-family: 'Open Sans';
     font-size: 48px;
-    color: #333333;
-    margin-top: 0;
+    color: #333;
     margin-bottom: 43px;
 }
 
@@ -181,7 +202,7 @@ h1:after
     margin-top: 0;
     font: 19px/32px Georgia;
     color: #555555;
-    margin-bottom: 37px;
+    margin-bottom: 39px;
 }
 
 h2 
@@ -198,7 +219,7 @@ h2
     position: relative;
     font: 400 19px Georgia;
     color: #15a98b;
-    margin-top: 10px;
+    margin-top: 7px;
     text-decoration: none;
     border-bottom: 1px #15a98b solid;
 }
@@ -244,13 +265,12 @@ h2
     height: 100%;
 }
 
-.film_name 
+h3
 {
-    display: block;
-    margin-left: -2px;
     margin-top: 25px;
+    margin-bottom: 0;
     font: 700 22px 'Open Sans', sans-serif;
-    color: #333333;
+    color: #333;
 }
 
 .film_about 
