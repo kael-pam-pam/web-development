@@ -126,36 +126,30 @@
       </div>
     </div>
     <form class="form_write_me" method="get" autocomplete="off">
-      <div class="form_title">
-        <div class="form_title_line"></div>
-        <span class="form_title_text" id="write_me">напиши мне</span>
-        <div class="form_title_line"></div>
-      </div>
-      <span class="form_label necessarily">Ваше имя</span> 
-      <input class="input_text" type="text" name="name" maxlength="30" required="requared">
-      <span class="form_label necessarily">Ваш email</span>
-      <input class="input_text" type="text" name="email" maxlength="30" required="requared">
-      <span class="form_label">Откуда вы?</span>
-      <select class="input_select" name="country">
-        <option class="form_option" value="Россия">Россия</option>
+      <span class="form_title" id="write_me">напиши мне</span>
+      <label class="caption necessarily" for="name">Ваше имя</label> 
+      <input class="text_field" type="text" id="name" name="name" maxlength="30" required="requared">
+      <label class="caption necessarily" for="email">Ваш email</label>
+      <input class="text_field" type="text" id="email" name="email" maxlength="30" required="requared">
+      <label class="caption" for="country">Откуда вы?</label>
+      <select class="choose_field" id="country" name="country">
+        <option value="Россия">Россия</option>
         <option value="Китай">Китай</option>
         <option value="США">США</option>
         <option value="Япония">Япония</option>
         <option value="Германия">Германия</option>
       </select>
-      <span class="form_label">Ваш пол</span>
-      <div class="input_radios">
-        <input class="input_radio" id="gender_male" type="radio" name="gender" value="male" checked>  
-        <label for="gender_male" class="radio_label">Мужской</label>
-        <input class="input_radio" id="gender_female" type="radio" name="gender" value="female">
-        <label for="gender_female" class="radio_label">Женский</label>
+      <span class="caption">Ваш пол</span>
+      <div class="gender_choose">
+        <input id="gender_male" type="radio" name="gender" value="male" checked>  
+        <label for="gender_male" class="caption_switch">Мужской</label>
+        <input id="gender_female" type="radio" name="gender" value="female">
+        <label for="gender_female" class="caption_switch">Женский</label>
       </div>
-      <span class="form_label necessarily">Ваше сообщение</span>
-      <textarea class="input_textarea"name="message" maxlength="200" required="requared"></textarea>
+      <label class="caption necessarily" for="message">Ваше сообщение</label>
+      <textarea class="message_field" id="message" name="message" maxlength="200" required="requared"></textarea>
       <input class="submit" type="submit" value="Отправить">
     </form>
-    <footer class="footer">
-      <span class="footer_text">© 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»</span>  
-    </footer>    
+    <span class="footer_text">© 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»</span>     
   </body>
 </html>

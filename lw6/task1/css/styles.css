@@ -1,6 +1,6 @@
 *:focus
 {
-    outline: #15a98c solid 2px;
+    outline: none;
 }
 
 body
@@ -307,36 +307,45 @@ body
 {
     width: 697px;
     margin: 0 auto;
-    padding-top: 48px;
+    //padding-top: 48px;
     padding-bottom: 49px;
 }
 
 .form_title 
 {
-    display: flex;
+    display: block;
+    text-align: center;
     margin-bottom: 73px;
-}
-
-.form_title_line
-{
-    display: block;
-    content: '';
-    height: 1px; 
-    background-color: #c4c4c4; 
-    flex-grow: 1; 
-    align-self: center;
-}
-
-.form_title_text 
-{
-    display: block;
-    padding: 0 27px;
+    padding-top: 48px;
     text-transform: uppercase;
     font: 300 36px/1 'Open Sans', sans-serif;
     color: #333;
+    position: relative;
 }
 
-.form_label
+.form_title:before, .form_title:after
+{
+    display: block;
+    content: '';
+    height: 1px;
+    width: 200px;
+    background-color: #c4c4c4;
+    position: absolute;
+}
+
+.form_title:before
+{
+    left: 0;
+    top: 66px;
+}
+
+.form_title:after
+{
+    right: 0;
+    top: 66px;
+}
+
+.caption
 {
     display: block;
     font: 20px 'Open Sans', sans-serif;
@@ -353,7 +362,7 @@ body
     margin-left: 5px;  
 }
 
-.input_text
+.text_field
 {
     box-sizing: border-box;
     width: 540px;
@@ -365,7 +374,7 @@ body
     border-radius: 3px;
 }
 
-.input_select
+.choose_field
 {
     box-sizing: border-box;
     width: 540px;
@@ -381,18 +390,18 @@ body
     background: white url("../pictures/arrow_down.png") right 16px top 19px no-repeat;
 }
 
-.input_radios
+.gender_choose
 {
     margin: 11px 0 41px 75px;
     font: 18px 'Open Sans', sans-serif;
 }
 
-.radio_label
+.caption_switch
 {
     margin-right: 31px;
 }
 
-.input_textarea
+.message_field
 {
     box-sizing: border-box;
     width: 540px;
@@ -418,16 +427,19 @@ body
     width: 220px;
     text-align: center;
     border-radius: 5px;
-}
-
-.footer 
-{
-    background-color: #f5f5f5;
-    text-align: center;
+    cursor: pointer;
 }
 
 .footer_text 
 {
+    display: block;
+    background-color: #f5f5f5;
+    text-align: center;
     font: 16px/70px Georgia;
     color: #555;
+}
+
+.asd
+{
+  //outline: #15a98c solid 2px;
 }
