@@ -374,6 +374,11 @@ body
     border-radius: 3px;
 }
 
+.text_field:focus, .choose_field:focus, .message_field:focus
+{
+    border: #15a98c solid 2px;
+}
+
 .choose_field
 {
     box-sizing: border-box;
