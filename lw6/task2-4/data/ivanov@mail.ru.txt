@@ -1,0 +1,5 @@
+name: Oleg
+email: ivanov@mail.ru
+country: Япония
+gender: male
+message: Как дела?
