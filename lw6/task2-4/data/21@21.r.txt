@@ -1,5 +1,0 @@
-name: 21
-email: 21@21.r
-country: Китай
-gender: male
-message: 21

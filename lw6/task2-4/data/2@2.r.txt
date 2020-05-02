@@ -1,5 +1,0 @@
-name: 1
-email: 2@2.r
-country: Китай
-gender: male
-message: e

@@ -2,7 +2,6 @@
 
 function feedbacksListPages(): void
 {
-    $args['status'] = 2;
     $args['profileData'] = [];
     $args['message'] = '';
     if (getRequestMethod() === 'POST')

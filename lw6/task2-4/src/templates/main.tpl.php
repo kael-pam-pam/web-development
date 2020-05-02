@@ -145,16 +145,16 @@
       </select>
       <span class="caption">Ваш пол</span>
       <div class="gender_choose">
-        <input id="gender_male" type="radio" name="gender" value="male" <? echo printCheked('gender', 'male', $args['valuesBefore']); ?> />  
+        <input id="gender_male" type="radio" name="gender" value="male" <? echo printChecked('gender', 'male', $args['valuesBefore']); ?> />  
         <label for="gender_male" class="caption_switch">Мужской</label>
-        <input id="gender_female" type="radio" name="gender" value="female" <? echo printCheked('gender', 'female', $args['valuesBefore']); ?> />
+        <input id="gender_female" type="radio" name="gender" value="female" <? echo printChecked('gender', 'female', $args['valuesBefore']); ?> />
         <label for="gender_female" class="caption_switch">Женский</label>
       </div>
       <label class="caption necessarily" for="message">Ваше сообщение</label>
       <textarea class="message_field" id="message" name="message" maxlength="200" required="requared"><? echo $args['valuesBefore']['message'] ?? ''; ?></textarea>
       <input class="submit" type="submit" value="Отправить" />
-      <span class="form_answer <? echo ($args['status'] === 1) ? 'success' : 'error' ?>"><? echo $args['message'] ?></span>
-      <? if ($args['status'] === 0) 
+      <span class="form_answer <? echo isset($args['status']) ? $args['status'] === 1 ? 'success' : 'error' : ''; ?>"><? echo $args['message']; ?></span>
+      <? if (isset($args['status']) && $args['status'] === 0) 
            { 
         ?>
         <ul class="error_fields">

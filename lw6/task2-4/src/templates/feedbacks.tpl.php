@@ -23,9 +23,9 @@
           <label class="caption necessarily" for="email">Анкета пользователя с email</label>
           <input class="text_field" type="text" id="email" name="email" maxlength="30" required="requared">
           <input class="submit" type="submit" value="Посмотреть">
-          <p class="form_answer <? echo ($args['status'] === 1) ? 'success' : 'error' ?>"><? echo $args['message'] ?></p>
+          <p class="form_answer <? echo isset($args['status']) ? $args['status'] === 1 ? 'success' : 'error' : ''; ?>"><? echo $args['message']; ?></p>
         </form>
-        <? if ($args['status'] === 1) 
+        <? if (isset($args['status']) && ($args['status'] === 1)) 
            { 
         ?>
         <ul class="profile_data">
