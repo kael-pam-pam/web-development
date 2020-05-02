@@ -1,27 +1,3 @@
-<?php
-
-function printValue(string $name, array $args): string
-{
-    return "value='" . ((isset($args['valuesBefore'][$name])) ? $args['valuesBefore'][$name] : "") . "'";
-}
-
-function printText(string $name, array $args): string
-{
-    return (isset($args['valuesBefore'][$name])) ? $args['valuesBefore'][$name] : "";
-}
-
-function printSelected(string $name, string $valueOpt, array $args): string
-{
-    return (isset($args['valuesBefore'][$name])) ? ($args['valuesBefore'][$name] === $valueOpt) ? "selected" : "" : "";
-}
-
-function printCheked(string $name, string $valueRad, array $args): string
-{
-    return (isset($args['valuesBefore'][$name])) ? ($args['valuesBefore'][$name] === $valueRad) ? "checked" : "" : "";
-}
-
-?>
-
 <!DOCTYPE HTML>
 <html lang="ru">
   <head>
@@ -155,29 +131,38 @@ function printCheked(string $name, string $valueRad, array $args): string
     <form class="form_write_me" method="post" autocomplete="off">
       <span class="form_title" id="write_me">напиши мне</span>
       <label class="caption necessarily" for="name">Ваше имя</label> 
-      <input class="text_field" type="text" id="name" name="name" maxlength="30" required="requared" <? echo printValue('name', $args); ?>>
+      <input class="text_field" type="text" id="name" name="name" maxlength="30" required="requared" value=<? echo '"' . ($args['valuesBefore']['name'] ?? '') . '"'; ?> />
       <label class="caption necessarily" for="email">Ваш email</label>
-      <input class="text_field" type="text" id="email" name="email" maxlength="30" required="requared" <? echo printValue('email', $args); ?>>
+      <input class="text_field" type="email" id="email" name="email" maxlength="30" required="requared" value=<? echo '"' . ($args['valuesBefore']['email'] ?? '') . '"'; ?> />
       <label class="caption" for="country">Откуда вы?</label>
       <select class="choose_field" id="country" name="country">
-        <option value="..." <? echo printSelected('country', '...', $args); ?>>...</option>
-        <option value="Россия" <? echo printSelected('country', 'Россия', $args); ?>>Россия</option>
-        <option value="Китай" <? echo printSelected('country', 'Китай', $args); ?>>Китай</option>
-        <option value="США" <? echo printSelected('country', 'США', $args); ?>>США</option>
-        <option value="Япония" <? echo printSelected('country', 'Япония', $args); ?>>Япония</option>
-        <option value="Германия" <? echo printSelected('country', 'Германия', $args); ?>>Германия</option>
+        <option value="..." <? echo printSelected('country', '...', $args['valuesBefore']); ?>>...</option>
+        <option value="Россия" <? echo printSelected('country', 'Россия', $args['valuesBefore']); ?>>Россия</option>
+        <option value="Китай" <? echo printSelected('country', 'Китай', $args['valuesBefore']); ?>>Китай</option>
+        <option value="США" <? echo printSelected('country', 'США', $args['valuesBefore']); ?>>США</option>
+        <option value="Япония" <? echo printSelected('country', 'Япония', $args['valuesBefore']); ?>>Япония</option>
+        <option value="Германия" <? echo printSelected('country', 'Германия', $args['valuesBefore']); ?>>Германия</option>
       </select>
       <span class="caption">Ваш пол</span>
       <div class="gender_choose">
-        <input id="gender_male" type="radio" name="gender" value="male" <? echo printCheked('gender', 'male', $args); ?>>  
+        <input id="gender_male" type="radio" name="gender" value="male" <? echo printCheked('gender', 'male', $args['valuesBefore']); ?> />  
         <label for="gender_male" class="caption_switch">Мужской</label>
-        <input id="gender_female" type="radio" name="gender" value="female" <? echo printCheked('gender', 'female', $args); ?>>
+        <input id="gender_female" type="radio" name="gender" value="female" <? echo printCheked('gender', 'female', $args['valuesBefore']); ?> />
         <label for="gender_female" class="caption_switch">Женский</label>
       </div>
       <label class="caption necessarily" for="message">Ваше сообщение</label>
-      <textarea class="message_field" id="message" name="message" maxlength="200" required="requared"><? echo printText('message', $args); ?></textarea>
-      <input class="submit" type="submit" value="Отправить">
-      <p class="form_answer <? echo ($args['isSuccess'] === 1) ? 'success' : 'error' ?>"><? echo $args['message'] ?></p>  
+      <textarea class="message_field" id="message" name="message" maxlength="200" required="requared"><? echo $args['valuesBefore']['message'] ?? ''; ?></textarea>
+      <input class="submit" type="submit" value="Отправить" />
+      <span class="form_answer <? echo ($args['status'] === 1) ? 'success' : 'error' ?>"><? echo $args['message'] ?></span>
+      <? if ($args['status'] === 0) 
+           { 
+        ?>
+        <ul class="error_fields">
+          <? foreach($args['errorFields'] as $answer): ?>
+            <li><?php echo $answer; ?></li>
+          <? endforeach; ?>
+        </ul>
+        <? } ?>
     </form>
     <span class="footer_text">© 2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»</span>     
   </body>

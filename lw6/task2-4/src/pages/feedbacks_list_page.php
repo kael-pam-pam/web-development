@@ -2,8 +2,8 @@
 
 function feedbacksListPages(): void
 {
-    $args['status'] = 0;
-    $args['profileData'] = array();
+    $args['status'] = 2;
+    $args['profileData'] = [];
     $args['message'] = '';
     if (getRequestMethod() === 'POST')
     {
@@ -11,8 +11,7 @@ function feedbacksListPages(): void
         if (is_null($email))
         {
             $args['message'] = 'Не указан email!';
-            $args['status'] = -1;
-            $args['profileData'] = array();    
+            $args['status'] = 0;  
         }
         else
         {
@@ -21,13 +20,11 @@ function feedbacksListPages(): void
             {
                 $args['status'] = 1;
                 $args['profileData'] = $readedData['profileData'];
-                $args['message'] = '';
             }
             else
             {
                 $args['message'] = 'Анкета не найдена!';
-                $args['status'] = -1;
-                $args['profileData'] = array();
+                $args['status'] = 0;
             }
         }
     }

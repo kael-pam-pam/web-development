@@ -1,6 +1,6 @@
 <?php
 
-function mainPage(array $args = array('status' => 0, 'errorFields' => null)): void
+function mainPage(array $args = array('status' => 2)): void
 {
     renderTemplate('main.tpl.php', $args);
 }

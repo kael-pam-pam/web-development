@@ -435,13 +435,23 @@ body
 }
 
 .form_answer
-{
-    position: absolute; 
+{   
+    display: block;
     padding: 0; 
     margin: 0 0 0 80px; 
     width: 220px; 
     text-align: center; 
     font: 16px/1.8 Georgia; 
+}
+
+.error_fields
+{
+    margin: 0;
+    margin-left: 80px;
+    padding: 0;
+    padding-left: 30px;
+    font: 16px/1.8 Georgia; 
+    color: #e85723;
 }
 
 .error

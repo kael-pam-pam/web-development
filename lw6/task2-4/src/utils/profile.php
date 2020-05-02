@@ -33,32 +33,32 @@ function isValidEmail(?string $email): bool
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
 
-function isCorrectUserData(array $userData): array
+function validateUserData(array $userData): array
 {
     $isValid = false;
     $uncorrFields = array();
     if (is_null($userData['name']))
     {
-        array_push($uncorrFields, 'name');
+        array_push($uncorrFields, 'Имя');
     }
     if (!isValidEmail($userData['email']))
     {
-        array_push($uncorrFields, 'email');
+        array_push($uncorrFields, 'Email');
     }
     if ((is_null($userData['country'])) || ($userData['country'] === '...'))
     {
-        array_push($uncorrFields, 'country');
+        array_push($uncorrFields, 'Страна');
     }   
     if (is_null($userData['gender']))
     {
-        array_push($uncorrFields, 'gender');
+        array_push($uncorrFields, 'Пол');
     }
     if (is_null($userData['message']))
     {
-        array_push($uncorrFields, 'message');
+        array_push($uncorrFields, 'Сообщение');
     }
     $isValid = (count($uncorrFields) === 0); 
-    return array('isCorrect' => $isValid, 'errorFields' => $uncorrFields);
+    return array('isValidate' => $isValid, 'errorFields' => $uncorrFields);
 }
 
 function readProfileFile(string $fileName): array
@@ -71,13 +71,26 @@ function readProfileFile(string $fileName): array
     }
     else 
     {
+        $translate['name'] = 'Имя';
+        $translate['email'] = 'Эл. ящик';
+        $translate['country'] = 'Страна';
+        $translate['gender'] = 'Пол';
+        $translate['message'] = 'Сообщение';
         $text = file($fileName, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         foreach ($text as $value)
-        {
+        {   
+            foreach ($translate as $k => $v)
+            {              
+                $pos = strpos($value, $k . ': ');
+                if ($pos === 0)
+                {
+                    $value = substr_replace($value, $v, $pos, strlen($k));
+                    break;
+                }
+            }
             array_push($profileData, $value);
         }
         $fileExist = true;
     }
-
     return array('fileExist' => $fileExist, 'profileData' => $profileData);
 }
