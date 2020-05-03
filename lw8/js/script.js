@@ -1,32 +1,38 @@
+const LEFT = 'left';
+const RIGHT = 'right';
+const FIRST = 'first';
+const LAST = 'last';
+
+
 function moveCarouselLeft() {
   let lastFilm = filmCollection.pop();
   filmCollection.unshift(lastFilm);
-  refreshHTML('left');
+  refreshHTML(LEFT);
 }
 
 function moveCarouselRight() {
   let firstFilm = filmCollection.shift();
   filmCollection.push(firstFilm);
-  refreshHTML('right');
+  refreshHTML(RIGHT);
 }
 
 function refreshHTML(direction) {
-  if ((direction !== 'left') && (direction !== 'right')) {
+  if ((direction !== LEFT) && (direction !== RIGHT)) {
     console.log('ошибка!');
     return;
   }
   
   let films = document.querySelectorAll('.film');
-  if (direction === 'left') {
+  if (direction === LEFT) {
     films[films.length - 1].remove();
     const film = createFilm(filmCollection[0]);
-    insertFilm(film, 'first');
+    insertFilm(film, FIRST);
   }
   
-  if (direction === 'right') {
+  if (direction === RIGHT) {
     films[0].remove();
     const film = createFilm(filmCollection[3]);
-    insertFilm(film, 'last')
+    insertFilm(film, LAST)
   }     
 }
 
@@ -45,15 +51,15 @@ function createFilm(filmData) {
 }
 
 function insertFilm(film, position) {
-  if ((position !== 'first') && (position !== 'last')) {
+  if ((position !== FIRST) && (position !== LAST)) {
     console.log('ошибка!');
     return;
   }
   
-  if (position === 'first') {
+  if (position === FIRST) {
     document.querySelector('.film_list').prepend(film)
   }  
-  if (position === 'last') {
+  if (position === LAST) {
     document.querySelector('.film_list').append(film)
   }
 }
