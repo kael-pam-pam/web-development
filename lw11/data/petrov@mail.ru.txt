@@ -1,0 +1,5 @@
+name: Petrov
+email: petrov@mail.ru
+country: Китай
+gender: male
+message: World

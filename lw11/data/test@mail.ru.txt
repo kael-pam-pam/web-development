@@ -1,0 +1,5 @@
+name: Ivan
+email: test@mail.ru
+country: Китай
+gender: male
+message: Привет
