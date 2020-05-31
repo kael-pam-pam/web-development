@@ -1,34 +1,33 @@
 async function sendFormData(event) {
   event.preventDefault();  
-  let responsed = await saveFeedback();
+  const responsed = await saveFeedback();
   showErrors(responsed);
 }
 
 async function saveFeedback() {
   const formData = new FormData(document.forms.formWriteMe);
-  let response = await fetch('http://localhost:8080/index.php', {
+  const response = await fetch('http://localhost:8080/index.php', {
     method: 'POST',
     body: formData
   })
   if (response.ok) {
     return await response.json();
-  } else {
-    return null;
   }
+  return null;
 }
 
-function showErrors(callback) {
+function showErrors(respond) {
   const successMessage = document.querySelector('.success_message');
   let elem;
-  for (let key in callback) {
+  for (let key in respond) {
     elem = document.getElementById(key);
-    if (callback[key] == 'valid') {
+    if (respond[key] == 'valid') {
       elem.classList.remove('not_valid');
     } else {
       elem.classList.add('not_valid');
     }
   }
-  if (callback['name'] == 'valid' && callback['email'] == 'valid' && callback['message'] == 'valid') {
+  if (respond['name'] == 'valid' && respond['email'] == 'valid' && respond['message'] == 'valid') {
     const form = document.forms.formWriteMe;
     form.reset();
     successMessage.classList.add('visible');
