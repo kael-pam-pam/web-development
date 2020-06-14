@@ -1,0 +1,58 @@
+<svg width="250" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <!--Стэн-->
+  <!--Штаны-->
+  <rect x="50.5" y="342" width="160" height="31" fill="#3e76c8" />
+  <!--Ступни-->
+  <path d="M36 375 L36 373 Q80 358 125 371 Q180 360 226 375 L225 377 Z" fill="#3b383f" />
+  <!--Куртка-->
+  <path d="M52 240 Q19 275 20 318 L45 325 L40 343 Q127 365 213 342 L232 321 Q230 272 200 238 Z" fill="#d47162" />
+  <path d="M53 289 Q49 302 48 319" stroke="#4c3b3c" fill="none" />
+  <path d="M197 289 Q200 305 203 328" stroke="#4c3b3c" fill="none" />
+  <line x1="129" y1="284" x2="126" y2="354" stroke="#553e3e" stroke-width="2.5" />
+  <!--Воротник-->
+  <path d="M55 243 C72 282 126 285 127 280 " fill="none" stroke="#3b3a3a" stroke-width="1.5" />
+  <path d="M53 244 C72 280 126 285 128 281 Q130 260 66 243 Z" fill="#ff2143" />
+  <path d="M130 280 C140 292 201 271 200 246" fill="none" stroke="#3b3a3a" stroke-width="1.5" />
+  <path d="M128 281 C140 292 201 270 203 248 C189 234 132 255 128 281 Z" fill="#ff2143" />
+  <path d="M130 277 Q134 260 189 234" fill="none" stroke="#313131" />
+  <!--Пуговицы-->
+  <circle fill="#353034" cx="118.5" cy="290.7" r="3"/>
+  <circle fill="#353034" cx="118" cy="314" r="3"/>
+  <circle fill="#353034" cx="116" cy="340" r="3"/>
+  <!--Варежки-->
+  <circle fill="#ff203f" cx="33.5" cy="321.3" r="18"/>
+  <circle fill="#ff203f" cx="47" cy="316" r="8" stroke="#303030" stroke-width="0.4" />
+  <circle fill="#ff203f" cx="217.3" cy="327" r="18.5"/>
+  <circle fill="#ff203f" cx="203" cy="322.5" r="8" stroke="#303030" stroke-width="0.4" />
+  <!--Голова  -->
+  <circle fill="#ffecc2" cx="124.5" cy="156" r="115"/>
+  <!--Шапка-->
+  <path d="M10 130 C 30 0 205 0 238 121 Z" fill="#3d76c7" />
+  <path d="M5 126 Q119 80 242 115 L242 140 Q119 113 6 149 Z" fill="#ff1e41" />
+  <rect x="86" y="31" rx="2.5" width="53" height="5" fill="#ff2041" stroke="black" stroke-width="0.3"/>
+  <rect x="86" y="31" rx="2.5" width="53" height="5" fill="#ff2041" stroke="black" stroke-width="0.3" transform="rotate(19 113 33)"/>
+  <rect x="86" y="31" rx="2.5" width="53" height="5" fill="#ff2041" stroke="black" stroke-width="0.3" transform="rotate(43 113 33)"/>
+  <rect x="86" y="31" rx="2.5" width="53" height="5" fill="#ff2041" stroke="black" stroke-width="0.3" transform="rotate(64 113 33)"/> 
+  <rect x="86" y="31" rx="2.5" width="53" height="5" fill="#ff2041" stroke="black" stroke-width="0.3" transform="rotate(85 113 33)"/>      
+  <rect x="86" y="31" rx="2.5" width="53" height="5" fill="#ff2041" stroke="black" stroke-width="0.3" transform="rotate(108 113 33)"/>            
+  <rect x="86" y="31" rx="2.5" width="53" height="5" fill="#ff2041" stroke="black" stroke-width="0.3" transform="rotate(132 113 33)"/>  
+  <rect x="86" y="31" rx="2.5" width="53" height="5" fill="#ff2041" stroke="black" stroke-width="0.3" transform="rotate(154 113 33)"/>  
+  <!--Брови-->
+  <polyline points="48,141 71,116" stroke="black" stroke-width="3.5" />
+  <polyline points="165,115 193,133" stroke="black" stroke-width="3.5" />
+  <!--Глаза-->
+  <path d="M73 143 A36 31 -60 0 1 124 154" stroke="#deb880" stroke-width="2" fill="none" />
+  <path d="M131 143 A36 31 60 0 1 187 154" stroke="#deb880" stroke-width="2" fill="none" />
+  <ellipse cx="93" cy="167" rx="36" ry="31" fill="#ffffff" transform="rotate(-60 93 167)"/>
+  <ellipse cx="158" cy="165" rx="36" ry="31" fill="#ffffff" transform="rotate(60 158 165)"/>
+  <circle fill="#332e32" cx="103.5" cy="168" r="4"/>
+  <circle fill="#332e32" cx="143" cy="167" r="4"/>
+  <path d="M126 169 A36 31 60 0 1 126 153" stroke="black" stroke-width="0.5" fill="none" />
+  <!--Рот-->
+  <path d="M99 227 Q126 223 162 226 Q146 244 132 252 Q110 243 99 229 Z" fill="#342f33" />
+  <!--Зубы-->
+  <path d="M105 228 Q129 224 159 227 L152 235 L146 237 L109 236 L105 231 Z" fill="white" />
+  <polyline points="116,237 117,226" fill="none" stroke="black" stroke-width="1.2" />
+  <polyline points="131,237 132,226" fill="none" stroke="black" stroke-width="1.2" />
+  <polyline points="144,237 147,226" fill="none" stroke="black" stroke-width="1.2" />
+</svg>
